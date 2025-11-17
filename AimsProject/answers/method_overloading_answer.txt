@@ -1,0 +1,2 @@
+- Khi thử thêm phương thức addDVD(DigitalVideoDisc… discs) thì sẽ có lỗi do trước đó đã có addDVD(DigitalVideoDisc[] discs) cùng chữ kí.
+- Em chọn bỏ phương thức addDVD(DigitalVideoDisc[] discs) do phương thức còn lại: varags linh hoạt hơn.
