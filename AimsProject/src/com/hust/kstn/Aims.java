@@ -33,7 +33,7 @@ public class Aims {
 		//he wants to watch a Chinese film too
 		luigi_cart.addDVD(dvd1);
 		luigi_cart.removeDVD(dvd2);
-		luigi_cart.addDVD(dvd1);
+		luigi_cart.addDVD(dvd1,dvd2);
 		
 	}
 }

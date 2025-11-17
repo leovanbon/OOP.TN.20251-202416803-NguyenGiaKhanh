@@ -1,0 +1,6 @@
+- Thêm các file/thư mục được tạo tự động (như .settings, bin, .vscode) để repo chỉ chứa mã nguồn và tránh xung đột khi làm việc nhóm.
+- Để ngừng theo dõi file đã commit:
+	i. thêm đường dẫn vào .gitignore
+	ii. chạy: git rm -r --cached .
+	iii. commit và push
+	
