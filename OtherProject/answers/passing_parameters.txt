@@ -1,0 +1,34 @@
+1. Java luôn là truyền tham trị (pass by value). Khi gọi phương thức swap, Java tạo ra hai bản sao của giá trị tham chiếu (địa chỉ bộ nhớ) từ s1 và s2. Mọi thao tác hoán đổi bên trong phương thức chỉ diễn ra trên hai bản sao này. Các biến tham chiếu gốc s1 và s2 trong hàm main hoàn toàn không bị ảnh hưởng.
+
+2. Giải pháp là không hoán đổi bản thân các tham chiếu, mà là hoán đổi nội dung của các đối tượng mà chúng trỏ tới. Ta làm điều này bằng cách sử dụng các phương thức setter để thay đổi giá trị các thuộc tính.
+
+
+public static void swap(Student s1, Student s2) {
+    // Lưu tạm thông tin của đối tượng s1
+    String tempName = s1.getName();
+    int tempId = s1.getStudentId();
+
+    // Gán thông tin của s2 cho s1
+    s1.setName(s2.getName());
+    s1.setStudentId(s2.getStudentId());
+
+    // Gán thông tin đã lưu tạm cho s2
+    s2.setName(tempName);
+    s2.setStudentId(tempId);
+}
+
+3. Sơ đồ:
+
+Stack (trong hàm main)          |       Heap (Vùng nhớ lưu đối tượng)
+--------------------------------|-----------------------------------------
+   s1: 0x100  ----------------->|  Student{id=1, name="A"} @ 0x100
+   s2: 0x200  ----------------->|  Student{id=2, name="B"} @ 0x200
+
+Sau khi gọi swap(s1, s2):
+
+Stack (trong hàm main)          |       Heap (Vùng nhớ lưu đối tượng)
+--------------------------------|-----------------------------------------
+   s1: 0x100  ----------------->|  Student{id=2, name="B"} @ 0x100  <-- DỮ LIỆU ĐÃ ĐỔI
+   s2: 0x200  ----------------->|  Student{id=1, name="A"} @ 0x200  <-- DỮ LIỆU ĐÃ ĐỔI
+
+Các tham chiếu s1 và s2 trên Stack không thay đổi địa chỉ chúng trỏ tới, nhưng nội dung của các đối tượng trên Heap đã được hoán đổi thành công.
