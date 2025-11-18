@@ -6,7 +6,7 @@ public class Cart {
 	private int qtyOrdered = 0;
 	
 	public Cart() {
-		System.out.println("Hello!");
+		System.out.println("Hello! I'm a new cart.");
 	}
 	
 	public boolean addDVD(DigitalVideoDisc disc) {
@@ -56,8 +56,8 @@ public class Cart {
 			break;
 		}
 		
-		if (isRemoved) System.out.println("Sucessfully removed: " + disc.getTitle() + " .");
-		else System.out.println("Your cart does not contain that disc."); 	
+		if (isRemoved) System.out.println("Sucessfully removed: [" + disc.getTitle() + "].");
+		else System.out.println("Can't remove [" + disc.getTitle() + "]. Your cart does not contain that disc."); 	
 	}
 	
 	public double calculateTotalCost() {
@@ -65,18 +65,19 @@ public class Cart {
 	    for (int i = 0; i < qtyOrdered; i++) {
 	        totalCost += itemsInCart[i].getCost();
 	    }
-	    System.out.println("Your cart value: " + totalCost);
+//	    System.out.println("Your cart value: " + totalCost);
 	    return totalCost;
 	}
 	
 	public void print() {
-	    System.out.println("=== Your cart has: " + qtyOrdered + " items ===");
-	    System.out.println("=== All items in cart ===");
+	    System.out.println("========================= THE CURRENT CART =========================");
+	    System.out.println("Total items: " + qtyOrdered);
 	    for (int i = 0; i < qtyOrdered; i++) {
 	        DigitalVideoDisc item = itemsInCart[i];
-	        System.out.println((i+1) + ". [Title]: " + item.getTitle() + ", [Cost]: " + item.getCost());
+	        System.out.println(item.toString());
 	    }
-	    System.out.println("=== that's all ===");
+	    System.out.println("Subtotal: "+ calculateTotalCost());
+	    System.out.println("===================================================== that's all ===");
 	}
 	
 }
