@@ -54,5 +54,7 @@ public class DigitalVideoDisc {
 	public double getCost() {
 		return cost;
 	}
-	
+	public int getId() {
+		return id;
+	}
 }
