@@ -19,7 +19,7 @@ public class CompactDiscTest {
 
         cd.addTrack(track2); 
         cd.removeTrack(track1);
-        cd.removeTrack(new Track("Xin Goi Nhau La Co Nhan", 382));
+        cd.addTrack(new Track("Ai Vo Tinh", 382));
 
         System.out.println(cd);
     }
