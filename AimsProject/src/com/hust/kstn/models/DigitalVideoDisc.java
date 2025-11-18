@@ -1,29 +1,17 @@
 package com.hust.kstn.models;
 
-public class DigitalVideoDisc extends Media {
-	private String director;
-	private int length;
-	
+public class DigitalVideoDisc extends Disc {
+
 	public DigitalVideoDisc(String title, String category, String director, int length, double cost) {
-		super(title, category, cost);
-        this.director = director;
-        this.length = length;
-	}
-
-	public String getDirector() {
-		return director;
-	}
-
-	public int getLength() {
-		return length;
+		super(title, category, director, length, cost);
 	}
 
 	public String toString() {
 		return "DVD" + "[" + getId() + "][" 
 					+ getTitle() + "]["
 					+ getCost() + "]["
-				    + this.director + "]["
-				    + this.length + "]["
+				    + getDirector() + "]["
+				    + getLength() + "]["
 				    + getCost() + "]";
 	}
 }
