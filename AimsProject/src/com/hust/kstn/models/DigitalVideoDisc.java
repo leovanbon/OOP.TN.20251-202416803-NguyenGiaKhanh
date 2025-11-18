@@ -60,11 +60,11 @@ public class DigitalVideoDisc {
 	}
 	
 	public String toString() {
-		return "DVD" + "[" + this.id + "]" + " - "
-				     + "[" + this.title + "]" + " - "
-				     + "[" + this.cost + "]" + " - "
-				     + "[" + this.director + "]" + " - "
-				     + "[" + this.length + "]" + " - "
-				     + "[" + this.category + "]";
+		return "DVD" + "[" + this.id + "]-[" 
+					+ this.title + "]-["
+					+ this.cost + "]-["
+				    + this.director + "]-["
+				    + this.length + "]-["
+				    + this.category + "]";
 	}
 }
