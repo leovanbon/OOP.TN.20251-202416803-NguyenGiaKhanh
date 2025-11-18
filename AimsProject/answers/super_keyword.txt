@@ -1,0 +1,1 @@
+Từ khóa super dùng để gọi (và lấy kết quả) từ phương thức của lớp cha.
