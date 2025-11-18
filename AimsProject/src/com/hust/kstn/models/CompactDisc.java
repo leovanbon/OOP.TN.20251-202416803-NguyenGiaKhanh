@@ -3,42 +3,13 @@ package com.hust.kstn.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompactDisc {
-    private int id;
-    private String title;
-    private String category;
-    private double cost;
+public class CompactDisc extends Disc{
     private String artist;
-    private String director;
     private List<Track> tracks = new ArrayList<>();
-
-    private static int nbCDs = 0; 
-    
     
     public CompactDisc(String title, String category, double cost, String artist, String director) {
-        this.id = ++nbCDs;
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
+    	super(title,category, director, 0, cost);
         this.artist = artist;
-        this.director = director;
-    }
-
-    
-    public int getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public double getCost() {
-        return cost;
     }
 
     public String getArtist() {
@@ -78,13 +49,13 @@ public class CompactDisc {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("CD[")
-          .append(id).append("][")
-          .append(title).append("][")
-          .append(category).append("][")
-          .append(director).append("][")
+          .append(getId()).append("][")
+          .append(getTitle()).append("][")
+          .append(getCategory()).append("][")
+          .append(getDirector()).append("][")
           .append(artist).append("][")
-          .append(totalLength()).append("s][$")
-          .append(cost).append("]\n");
+          .append(totalLength()).append("][")
+          .append(getCost()).append("]\n");
 
         if (tracks.isEmpty()) {
             sb.append("Tracks: [No tracks on this CD]");
